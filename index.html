@@ -151,3 +151,46 @@ footer {
 
 </body>
   </html>
+<section style="padding:60px; text-align:center; background:#f7f7f7;">
+  <h2 style="color:#e60023;">Book / Apply Now</h2>
+  <p>Fill in your details and we will contact you instantly on WhatsApp</p>
+
+  <input id="name" placeholder="Full Name" style="padding:10px; width:80%; margin:5px;"><br>
+  <input id="school" placeholder="School / Institution" style="padding:10px; width:80%; margin:5px;"><br>
+  <input id="grade" placeholder="Grade" style="padding:10px; width:80%; margin:5px;"><br>
+  <input id="phone" placeholder="Phone Number" style="padding:10px; width:80%; margin:5px;"><br><br>
+
+  <button onclick="sendWhatsApp()" 
+    style="padding:12px 25px; background:#25D366; color:white; border:none; font-weight:bold;">
+    Send Booking via WhatsApp
+  </button>
+
+  <br><br>
+
+  <a href="mailto:otvmediahu@gmail.com" style="color:#e60023;">
+    📧 Email Us: otvmediahu@gmail.com
+  </a>
+</section>
+
+<script>
+function sendWhatsApp(){
+  let name = document.getElementById("name").value;
+  let school = document.getElementById("school").value;
+  let grade = document.getElementById("grade").value;
+  let phone = document.getElementById("phone").value;
+
+  let message =
+`New Brite Life Booking Request:
+
+Name: ${name}
+School: ${school}
+Grade: ${grade}
+Phone: ${phone}
+
+Program: Brite Life Experience Club™ (R339/month)`;
+
+  let url = "https://wa.me/27799172717?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
+}
+      </script>
